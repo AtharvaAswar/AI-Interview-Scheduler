@@ -1,6 +1,6 @@
 "use client"
 import { supabase } from '@/services/supabaseClient'
-import { User } from 'lucide-react';
+import { userDetailContext } from '@/context/userDetailContext';
 import React, { useContext, useEffect, useState } from 'react'
 
 function Provider({ children }) {
@@ -41,9 +41,9 @@ function Provider({ children }) {
     }
 
     return (
-        <UserDetailContext.Provider value={{ user, setUser }}>
+        <userDetailContext.Provider value={{ user, setUser }}>
             <div>{children}</div>
-        </UserDetailContext.Provider>
+        </userDetailContext.Provider>
 
 
     )
@@ -52,6 +52,6 @@ function Provider({ children }) {
 export default Provider
 
 export const UserContext = () => {
-    const context = useContext(UserDetailContext);
+    const context = useContext(userDetailContext);
     return context;
 }
