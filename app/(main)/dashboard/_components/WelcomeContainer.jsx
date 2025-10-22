@@ -6,7 +6,6 @@ import Image from 'next/image';
 function WelcomeContainer() {
 
     const { user } = UserContext();
-    console.log("User in WelcomeContainer:", user);
     return (
         <div className='bg-white p-5 rounded-xl flex justify-between items-center'>
             <div>
